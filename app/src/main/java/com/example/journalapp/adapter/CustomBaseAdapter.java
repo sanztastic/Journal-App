@@ -57,11 +57,13 @@ public class CustomBaseAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(R.layout.activity_custom_list_view,null);
         TextView title = (TextView) view.findViewById(R.id.title_text);
+        TextView description = (TextView) view.findViewById(R.id.description_text);
         ImageView image = (ImageView) view.findViewById(R.id.image_icon);
         ImageView update = (ImageView) view.findViewById(R.id.update);
         ImageView delete = (ImageView) view.findViewById(R.id.delete);
         Journal journal = journalList.get(i);
         title.setText(journal.getTitle());
+        description.setText(journal.getDescription());
         Bitmap bitmap = DbBitmapUtility.getImage(journal.getImage());
         image.setImageBitmap(bitmap);
         update.setImageResource(R.drawable.update);
